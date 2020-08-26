@@ -1,0 +1,95 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="apexx_section">
+                <group id="apexxpayment">
+                    <group id="paypalpayment_gateway" translate="label" type="text" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Paypal Settings</label>
+                        <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                            <label>Enabled</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/paypalpayment_gateway/active</config_path>
+                        </field>
+                        <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1"
+                               showInWebsite="1" showInStore="1">
+                            <label>Title</label>
+                            <config_path>payment/paypalpayment_gateway/title</config_path>
+                        </field>
+                        <field id="payment_action" translate="label" type="select" sortOrder="3"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment Action</label>
+                            <source_model>Apexx\PaypalPayment\Model\Adminhtml\Source\PaymentAction</source_model>
+                            <config_path>payment/paypalpayment_gateway/payment_action</config_path>
+                        </field>
+                       <field id="dynamic_descriptor" translate="label" type="text" sortOrder="5"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Dynamic Descriptor</label>
+                            <config_path>payment/paypalpayment_gateway/dynamic_descriptor</config_path>
+                        </field>
+                        <field id="redirect_url" translate="label" type="text" sortOrder="6"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Redirect URL</label>
+                            <comment>Enter URL like http://yourdomain.com/apexxpaypal/index/response</comment>
+                        </field>
+                        <field id="recurring_type" translate="label" type="text" sortOrder="7"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Recurring Type</label>
+                            <config_path>payment/paypalpayment_gateway/recurring_type</config_path>
+                        </field>
+                        <field id="payment_product_type" translate="label" type="text" sortOrder="8"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment Product Type</label>
+                            <config_path>payment/paypalpayment_gateway/payment_product_type</config_path>
+                        </field>
+                        <field id="shopper_interaction" translate="label" type="text" sortOrder="9"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Shopper Interaction</label>
+                            <config_path>payment/paypalpayment_gateway/shopper_interaction</config_path>
+                        </field>
+                        <field id="brand_name" translate="label" type="text" sortOrder="10"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Brand Name</label>
+                            <config_path>payment/paypalpayment_gateway/brand_name</config_path>
+                        </field>
+                        <field id="customer_paypal_id" translate="label" type="text" sortOrder="11"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Customer Paypal Id</label>
+                        </field>
+                        <field id="tax_id" translate="label" type="text" sortOrder="12"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Paypal Tax Id</label>
+                        </field>
+                        <field id="tax_id_type" translate="label" type="text" sortOrder="19"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Paypal Tax Id type</label>
+                        </field>
+                        <field id="customer_dob" translate="label" type="text" sortOrder="20"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Customer Date of Birth</label>
+                        </field>
+                        <field id="order_descp" translate="label" type="text" sortOrder="21"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Order Description</label>
+                        </field>
+                        <field id="webhook_transaction_update" translate="label" type="text" sortOrder="22"
+                                   showInDefault="1" showInWebsite="1" showInStore="0">
+                                <label>Webhook Transaction Update</label>
+                            </field>
+                             <field id="sort_order" translate="label" type="text" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Sort Order</label>
+                            <frontend_class>validate-number</frontend_class>
+                            <config_path>payment/paypalpayment_gateway/sort_order</config_path>
+                        </field>
+                        <field id="allow" translate="label" type="multiselect" sortOrder="29" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Allowed Currencies</label>
+                            <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                            <backend_model>Magento\Config\Model\Config\Backend\Currency\Allow</backend_model>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

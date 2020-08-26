@@ -1,0 +1,16 @@
+<div class="checkout-success">
+    <p>
+        <?php
+            $objPaypalFailure = $this->getPaypalFailureMessage();
+            if (isset($objPaypalFailure['orderId'])) {
+                echo $block->escapeHtml(__('Your Order #') . $objPaypalFailure['orderId']);
+            }
+            if (isset($objPaypalFailure['paypalfailure']['status'])) {
+                echo $block->escapeHtml(__(' is ') . strtolower($objPaypalFailure['paypalfailure']['status']));
+            }
+            if (isset($objPaypalFailure['paypalfailure']['reason_message'])) {
+                echo $block->escapeHtml(__(' because of ') . $objPaypalFailure['paypalfailure']['reason_message']);
+            }
+        ?>
+    </p>
+</div>

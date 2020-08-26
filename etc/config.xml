@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <paypalpayment_gateway>
+                <active>0</active>
+                <model>PaypalPaymentFacade</model>
+                <title>Apexx Paypal Payment</title>
+                <payment_action>authorize</payment_action>
+                <dynamic_descriptor>Demo Merchant Test Purchase</dynamic_descriptor>
+                <recurring_type>first</recurring_type>
+                <payment_product_type>paypal</payment_product_type>
+                <shopper_interaction>ecommerce</shopper_interaction>
+                <brand_name>paypal_brand</brand_name>
+                <can_authorize>1</can_authorize>
+                <can_capture>1</can_capture>
+                <can_cancel>1</can_cancel>
+                <can_capture_partial>1</can_capture_partial>
+                <can_void>1</can_void>
+                <can_refund_partial_per_invoice>1</can_refund_partial_per_invoice>
+                <can_refund>1</can_refund>
+                <can_use_checkout>1</can_use_checkout>
+                <is_gateway>1</is_gateway>
+                <order_status>pending</order_status>
+                <sort_order>17</sort_order>
+            </paypalpayment_gateway>
+        </payment>
+    </default>
+</config>
