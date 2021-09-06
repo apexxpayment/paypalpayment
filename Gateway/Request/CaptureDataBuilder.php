@@ -114,7 +114,7 @@ class CaptureDataBuilder implements BuilderInterface
                 "user_agent" => $this->apexxBaseHelper->getUserAgent(),
                 "locale" => $this->apexxBaseHelper->getStoreLocale(),
                 "dynamic_descriptor" => $this->paypalPaymentHelper->getDynamicDescriptor(),
-                "merchant_reference" => 'JOURNEYBOX'.$order->getOrderIncrementId(),
+                "merchant_reference" => $this->apexxBaseHelper->getStoreCode().$order->getOrderIncrementId(),
                 "payment_product_type" => $this->paypalPaymentHelper->getPaymentProductType(),
                 "shopper_interaction" => $this->paypalPaymentHelper->getShopperInteraction(),
             ];
@@ -149,13 +149,13 @@ class CaptureDataBuilder implements BuilderInterface
             }
 
             $paypalDataFields['paypal']['redirection_parameters']['return_url'] =
-                $this->paypalPaymentHelper->getReturnUrl();
+                $this->apexxBaseHelper->getStoreUrl().'apexxpaypal/index/response';
 
             $customerFields=[];
             $customerFields['customer']['first_name'] = $billing->getFirstname();
             $customerFields['customer']['last_name'] = $billing->getLastname();
             $customerFields['customer']['email'] = $billing->getEmail();
-            $customerFields['customer']['phone'] = $billing->getTelephone();
+            $customerFields['customer']['phone'] = preg_replace('/[^\dxX]/', '', $billing->getTelephone());
             $customerFields['customer']['date_of_birth'] =
                 $this->paypalPaymentHelper->getCustomerInfoDob();
             $customerFields['customer']['address'] = [

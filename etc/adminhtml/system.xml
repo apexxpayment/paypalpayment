@@ -28,11 +28,11 @@
                             <label>Dynamic Descriptor</label>
                             <config_path>payment/paypalpayment_gateway/dynamic_descriptor</config_path>
                         </field>
-                        <field id="redirect_url" translate="label" type="text" sortOrder="6"
+                        <!--<field id="redirect_url" translate="label" type="text" sortOrder="6"
                                showInDefault="1" showInWebsite="1" showInStore="0">
                             <label>Redirect URL</label>
                             <comment>Enter URL like http://yourdomain.com/apexxpaypal/index/response</comment>
-                        </field>
+                        </field>-->
                         <field id="recurring_type" translate="label" type="text" sortOrder="7"
                                showInDefault="1" showInWebsite="1" showInStore="0">
                             <label>Recurring Type</label>
